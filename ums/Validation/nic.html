@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIC Validation</title>
+    <script>
+        function checkNic(){
+                let nic=document.getElementById("nic") .value;
+                if(nic == ""){
+                    alert("Please Enter NIC");
+                    return false;
+                }else{
+                    const pat1=/^[0-9]{9}$/;
+                    if(nic.match(pat1)) {
+                        alert("Valid NIC");
+                        return true;
+                    }else{
+                        alert("InValid NIC");
+                        return false;
+                    }
+                }
+        }
+    </script>
+</head>
+<body>
+    
+    <form action="check.php" method="post" onSubmit="return checkNic()">
+        <h3>NIC : <input type="text" id="nic"></h3>
+        <div><input type="submit" value="Check" /></div>
+    </form>
+</body>
+</html>
